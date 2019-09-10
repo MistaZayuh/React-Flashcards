@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button, Form, Segment } from 'semantic-ui-react'
+import React from 'react';
+import { Button, Form, Segment } from 'semantic-ui-react';
 
 class FlashcardForm extends React.Component {
   state = { cardfront: "", cardback: "", };
@@ -10,7 +10,8 @@ class FlashcardForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // more code needs to be added here later
+    this.props.addFlashcardFunction(this.state);
+    this.setState({ cardfront: "", cardback: "", })
   };
 
 

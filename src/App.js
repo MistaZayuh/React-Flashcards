@@ -4,7 +4,7 @@ import Flashcards from "./Flashcards";
 import FlashcardForm from "./FlashcardForm";
 
 class App extends React.Component {
-  state = { Flashcards: [
+  state = { flashcards: [
     { id: 1, front: "", back: "",},
     { id: 2, front: "", back: "",},
     { id: 3, front: "", back: "",},
@@ -14,7 +14,7 @@ class App extends React.Component {
 
   addFlashcard = (cardInfo) => {
     const flashcard = { id: this.getId(), ...cardInfo };
-    this.setState({ Flashcards: [...this.state.flashards, flashcard ]});
+    this.setState({ flashcards: [flashcard, ...this.state.flashcards]});
   };
 
   getId = () => {
@@ -34,7 +34,8 @@ class App extends React.Component {
         Flashcards yo
       </Header>
       <FlashcardForm addFlashcardFunction={this.addFlashcard} />
-      <Flashcards flashcards = {this.state.flashcards} />
+      <Flashcards flashcards = {this.state.flashcards}
+      flashcardsArray={ this.state.flashcards } />
       </Container>
     );
   };
