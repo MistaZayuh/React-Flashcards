@@ -5,9 +5,9 @@ import FlashcardForm from "./FlashcardForm";
 
 class App extends React.Component {
   state = { flashcards: [
-    { id: 1, front: "", back: "",},
-    { id: 2, front: "", back: "",},
-    { id: 3, front: "", back: "",},
+    { id: 1, cardfront: "", cardback: "", flipped: false },
+    { id: 2, cardfront: "", cardback: "", flipped: false },
+    { id: 3, cardfront: "", cardback: "", flipped: false },
   ],
   showForm: true,
  };
@@ -34,7 +34,7 @@ class App extends React.Component {
         Flashcards yo
       </Header>
       <FlashcardForm addFlashcardFunction={this.addFlashcard} />
-      <Flashcards flashcards = {this.state.flashcards}
+      <Flashcards 
       flashcardsArray={ this.state.flashcards } />
       </Container>
     );

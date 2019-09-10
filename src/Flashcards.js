@@ -1,27 +1,18 @@
 import React from "react";
-import { Grid, Button } from "semantic-ui-react";
+import { Grid, Icon } from "semantic-ui-react";
+import Flashcard from "./Flashcard";
 
 const Flashcards = (props) => (
 
 
-
-
-
-
-
   <Grid relaxed columns={4}>
-    <Grid.Column>
-      Flashcard 1
-    </Grid.Column>
-    <Grid.Column>
-      Flashcard 2
-    </Grid.Column>
-    <Grid.Column>
-      Flashcard 3
-    </Grid.Column>
-    <Grid.Column>
-      Flashcard 4
-    </Grid.Column>
+    {  props.flashcardsArray.map( flashcard => (
+      <Flashcard
+      key={flashcard.id}
+      { ...flashcard }
+      />
+    ))
+    }
   </Grid>
 
 );
