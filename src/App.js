@@ -1,25 +1,43 @@
 import React from 'react';
-import Semantic from "semantic-ui-react";
+import { Header, Container, Grid, } from "semantic-ui-react";
+import Flashcards from "./Flashcards";
+import FlashcardForm from "./FlashcardForm";
 
-class FlashCards extends React.Component {
+class App extends React.Component {
   state = { Flashcards: [
-    { id: 1, front: "", back: "",}
-    { id: 2, front: "", back: "",}
-    { id: 3, front: "", back: "",}
-  ]};
+    { id: 1, front: "", back: "",},
+    { id: 2, front: "", back: "",},
+    { id: 3, front: "", back: "",},
+  ],
+  showForm: true,
+ };
 
+  addFlashcard = (cardInfo) => {
+    const flashcard = { id: this.getId(), ...cardInfo };
+    this.setState({ Flashcards: [...this.state.flashards, flashcard ]});
+  };
 
-
+  getId = () => {
+    return Math.floor((1 + Math.random()) * 10000);
+  };
 
 
 
   render () {
     return (
-      <div>
-        
-      </div>
+      <Container style={{marginTop: "25px", }}>
+      <Header 
+      style={{marginBottom: "50px"}}
+      as="h1"
+      textAlign="center"
+      >
+        Flashcards yo
+      </Header>
+      <FlashcardForm addFlashcardFunction={this.addFlashcard} />
+      <Flashcards flashcards = {this.state.flashcards} />
+      </Container>
     );
   };
 };
 
-export default FlashCards;
+export default App;
