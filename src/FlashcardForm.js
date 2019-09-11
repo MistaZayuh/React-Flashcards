@@ -14,6 +14,16 @@ class FlashcardForm extends React.Component {
     this.setState({ cardfront: "", cardback: "", })
   };
 
+  handleClick = (id) => {
+    this.setState({
+      flashcards: this.state.flashcards.map( flashcard => {
+        if (flashcard.id === id) {
+          return { ...flashcard, flipped: !flashcard.flipped, };
+        }
+        return flashcard;
+      })
+    })
+  }
 
   render () {
     return (
