@@ -43,7 +43,7 @@ class FlashcardForm extends React.Component {
             fluid label='Card Back' 
             placeholder='Card Back' />
           </Form.Group>
-          <Form.Checkbox required={true} label='I agree to give this student an A' />
+          <Form.Checkbox required label='I agree to give this student an A' />
           <Button type='submit'>Submit</Button>
         </Form>
       </Segment>
@@ -52,4 +52,3 @@ class FlashcardForm extends React.Component {
 };
 export default FlashcardForm;
 
-// If you have trouble getting the form to submit, you should remove the required portion on the form

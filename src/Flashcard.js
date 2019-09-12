@@ -7,9 +7,10 @@ const Flashcard = (props) => (
     onClick={() => props.remove(props.id)}
     name= "window close outline" />
     <Segment 
+    className="card"
     style={{height: "200px", textAlign: "center"}}
     onClick={() => props.handleClick(props.id)}>
-      { props.flipped == false ? props.cardfront : props.cardback }
+      { props.flipped === false ? props.cardfront : props.cardback }
     
     </Segment>
   </Grid.Column>
